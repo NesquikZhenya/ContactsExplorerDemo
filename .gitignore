@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Xcode — per-user state (window layout, breakpoints, last-opened files).
+# Never shared: it conflicts on every pull and leaks one developer's setup.
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+
+# Note: xcshareddata/ is intentionally NOT ignored — the shared scheme is what
+# CI and every teammate build against, so it belongs in the repo.
+
+# Build products
+build/
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.xcarchive
+
+# Swift Package Manager
+# Package.resolved is intentionally NOT ignored — for an app target, pinning
+# exact dependency versions is the point.
+.build/
+.swiftpm/
