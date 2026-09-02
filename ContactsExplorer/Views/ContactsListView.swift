@@ -97,7 +97,6 @@ struct ContactsListView: View {
     }
 
     private func matches(contact: Contact, query: String) -> Bool {
-        print("DEBUG: checking if '\(contact.displayName)' matches query '\(query)'")
         if contact.displayName.localizedCaseInsensitiveContains(query) {
             return true
         }

@@ -101,19 +101,6 @@ struct ContactDetailView: View {
         FavoriteButton(isFavorite: store.isFavorite(contact), action: { store.toggleFavorite(contact) })
     }
 
-    private func requestAccessIfNeeded() async throws -> Bool {
-        switch CNContactStore.authorizationStatus(for: .contacts) {
-        case .authorized, .limited:
-            true
-        case .notDetermined:
-            try await CNContactStore().requestAccess(for: .contacts)
-        case .denied, .restricted:
-            false
-        @unknown default:
-            false
-        }
-    }
-
     // TODO: consider moving this into a manager
     private func loadFullImage() async {
         let status = CNContactStore.authorizationStatus(for: .contacts)

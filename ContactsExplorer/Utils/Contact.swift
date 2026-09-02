@@ -26,10 +26,6 @@ nonisolated struct Contact: Identifiable, Hashable {
     let thumbnailData: Data?
 
     var displayName: String {
-        // let name = "\(givenName) \(familyName)".trimmingCharacters(in: .whitespaces)
-        // if !name.isEmpty {
-        //     return name
-        // }
         if !fullName.isEmpty {
             return fullName
         }
